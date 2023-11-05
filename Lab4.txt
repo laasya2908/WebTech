@@ -1,0 +1,251 @@
+src:
+
+* {
+margin: 0;
+padding: 0;
+}
+body {
+font-family: 'Be Vietnam Pro', sans-serif;
+}
+:root {
+--primary-color: #605DC8;
+--secondary-color: #8B89E6;
+--accent-color: #e8e7fa;
+--shadow-color: #E8E8E8;
+}
+button.primary {
+padding: 10px;
+border: solid 1px var(--primary-color);
+background: var(--primary-color);
+color: white;
+border-radius: 8px;
+}
+.listing {
+background: var(--accent-color);
+border-radius: 30px;
+padding-bottom: 30px;
+Home.component.ts
+}
+.listing-heading {
+color: var(--primary-color);
+padding: 10px 20px 0 20px;
+}
+.listing-photo {
+height: 250px;
+width: 100%;
+object-fit: cover;
+border-radius: 30px 30px 0 0;
+}
+.listing-location {
+padding: 10px 20px 20px 20px;
+}
+.listing-location::before {
+content: url("/assets/location-pin.svg") / "";
+}
+section.listing a {
+padding-left: 20px;
+text-decoration: none;
+color: var(--primary-color);
+}
+section.listing a::after {
+content: "\203A";
+margin-left: 5px;
+}
+import { HousingLocationComponent } from '../housing location/housinglocation.component';
+import { Housinglocation } from '../housinglocation';
+import { HousingService } from '../housing.service';
+@Component({
+selector: 'app-home',
+standalone: true,
+imports: [CommonModule,
+id: 5,
+name: 'Hopeful Apartment Group',
+city: 'Oakland',
+state: 'CA',
+photo: `${this.baseUrl}/r-architecture JvQ0Q5IkeMM-unsplash.jpg`,
+availableUnits: 2,
+wifi: true,
+laundry: true
+},
+{
+id: 6,
+name: 'Seriously Safe Towns',
+city: 'Oakland',
+state: 'CA',
+photo: `${this.baseUrl}/phil-hearing-IYfp2Ixe9nM unsplash.jpg`,
+availableUnits: 5,
+wifi: true,
+laundry: true
+},
+{
+id: 7,
+name: 'Hopeful Housing Solutions',
+city: 'Oakland',
+state: 'CA',
+photo: `${this.baseUrl}/r-architecture GGupkreKwxA-unsplash.jpg`,
+availableUnits: 2,
+wifi: true,
+laundry: true
+},
+{
+id: 8,
+name: 'Seriously Safe Towns',
+city: 'Oakland',
+state: 'CA',
+photo: `${this.baseUrl}/saru-robert-9rP3mxf8qWI unsplash.jpg`,
+housing-location.component.ts
+availableUnits: 10,
+wifi: false,
+laundry: false
+},
+{
+id: 9,
+name: 'Capital Safe Towns',
+city: 'Portland',
+state: 'OR',
+photo: `${this.baseUrl}/webaliser-_TPTXZd9mOo unsplash.jpg`,
+availableUnits: 6,
+wifi: true,
+laundry: tru
+import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Housinglocation } from '../housinglocation';
+@Component({
+selector: 'app-housing-location',
+standalone: true,
+imports: [CommonModule],
+template: `
+<section class="listing">
+<img class="listing-photo"
+[src]="housingLocation.photo" alt="Exterior photo of
+{{housingLocation.name}}">
+<h2 class="listing-heading">{{ housingLocation.name
+}}</h2>
+<p class="listing-location">{{
+housingLocation.city}}, {{housingLocation.state }}</p>
+</section>
+`,
+styleUrls: ['./housing-location.component.css']
+})
+export class HousingLocationComponent {
+@Input() housingLocation!: Housinglocation;
+App-routing.module.ts
+app.component.specs.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+const routes: Routes = [];
+@NgModule({
+imports: [RouterModule.forRoot(routes)],
+exports: [RouterModule]
+})
+export class AppRoutingModule { }
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from
+'@angular/router/testing';
+import { AppComponent } from './app.component';
+describe('AppComponent', () => {
+beforeEach(() => TestBed.configureTestingModule({
+imports: [RouterTestingModule],
+declarations: [AppComponent]
+}));
+it('should create the app', () => {
+const fixture =
+TestBed.createComponent(AppComponent);
+const app = fixture.componentInstance;
+expect(app).toBeTruthy();
+});
+it(`should have as title 'dress'`, () => {
+const fixture =
+TestBed.createComponent(AppComponent);
+const app = fixture.componentInstance;
+expect(app.title).toEqual('dress');
+});
+it('should render title', () => {
+const fixture =
+TestBed.createComponent(AppComponent);
+fixture.detectChanges();
+const compiled = fixture.nativeElement as
+App.component.ts
+app.module.ts
+HTMLElement;
+expect(compiled.querySelector('.content
+span')?.textContent).toContain('dress app is
+running!');
+});
+})
+
+app.component.ts
+import { Component } from '@angular/core';
+import { HomeComponent } from './home/home.component';
+@Component({
+selector: 'app-root',
+template: `
+<main>
+<header class="brand-name">
+<img class="brand-logo" style="width: 80px;"
+src="/assets/Screenshot 2023-08-13 at 11.46.00 AM.png"
+alt="logo" aria-hidden="true">
+</header>
+<section class="content">
+<app-home></app-home>
+</section>
+</main>
+`,
+styleUrls: ['./app.component.css'],
+})
+export class AppComponent {
+title = 'homes';
+
+app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform browser';
+import { AppRoutingModule } from './app routing.module';
+import { AppComponent } from './app.component';
+housinglocation.ts
+Index.html
+import { HomeComponent } from "./home/home.component";
+@NgModule({
+declarations: [
+AppComponent,
+],
+providers: [],
+bootstrap: [AppComponent],
+imports: [
+BrowserModule,
+AppRoutingModule,
+HomeComponent
+]
+})
+export class AppModule {
+export interface Housinglocation {
+id: number;
+name: string;
+city: string;
+state: string;
+photo: string;
+availableUnits: number;
+wifi: boolean;
+laundry: boolean;
+}
+
+index.html
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MyApp</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<h1>HELLO WORLD</h1>
+<app-root></app-root>
+</body>
+</html>
+
+Main.ts
+import { platformBrowserDynamic } from '@angular/platform-browserdynamic';
+import { AppModule } from './app/app.module';
+platformBrowserDynamic().bootstrapModule(AppModule)
+.catch(err => console.error(err));

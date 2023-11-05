@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Simple Form with JavaScript Validation</title>
+</head>
+<body>
+ <h1>Contact Us</h1>
+ <form id="contactForm">
+ <label for="name">Name:</label>
+ <input type="text" id="name" required>
+ <br>
+ <label for="email">Email:</label>
+ <input type="email" id="email" required>
+ <br>
+ <label for="message">Message:</label>
+ <textarea id="message" rows="4" required></textarea>
+ <br>
+ <input type="submit" value="Submit">
+ </form>
+ <script> document.getElementById('contactForm').onsubmit =
+function(event) { event.preventDefault();
+ // Get form elements
+ const name = document.getElementById('name').value.trim(); const
+email = document.getElementById('email').value.trim(); const message =
+document.getElementById('message').value.trim();
+ // Validate form elements if
+(name === '') {
+ alert('Please enter your name.');
+return;
+ }
+ if (email === '') {
+ alert('Please enter your email address.');
+return;
+ } else if (!isValidEmail(email)) {
+alert('Please enter a valid email address.');
+ return;
+ } if (message === '') {
+alert('Please enter your message.');
+return;
+ }
+ // Ask for user confirmation before submission
+if (confirm('Do you want to submit the form?')) {
+ // Perform the form submission (you can replace this with your desired
+submission logic)
+ // For example, you can use AJAX to send the form data to the server.
+alert('Form submitted successfully!');
+document.getElementById('contactForm').reset(); // Reset the form after
+successful submission
+ }
+ };
+ // Helper function to validate email format
+function isValidEmail(email) { const emailRegex
+= /^[^\s@]+@[^\s@]+\.[^\s@]+$/; return
+emailRegex.test(email);
+ }
+ </script>
+</body>
+</html>

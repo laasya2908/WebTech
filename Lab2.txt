@@ -1,0 +1,107 @@
+CSS:
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color:blue;
+    line-height: 1.6;
+    }
+    header{
+    text-align: center;
+    color: blue;
+    margin-bottom: 20px;
+    }
+    h1,h2,h3{
+    margin: 0;
+    }
+    hr{
+    border: 1px solid black;
+    }
+    h2{
+    color:blue;
+    margin-top: :20px;
+    }
+    p,ul{
+    color: black;
+    margin:10px,0
+    }
+    ul{
+    list-style-type: disc;
+    padding-left: 20px;
+    }
+    table{
+    width:100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    }
+    table,th,td{
+    border:1px solid black;
+    paddig:8px
+    }
+    th{
+    background-color: blue;
+    color:beige;
+HTML:
+ 
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <link rel="stylesheet" href="StyleSheet1.css"> 
+  <title>Resume</title> 
+</head> 
+<body> 
+  <header> 
+    <strong> 
+      <h1>Sri Laasya Kota</h1> 
+      <h2>Phone: 7842331761</h2> 
+      <h3>Email: sri.laasya17@gmail.com</h3> 
+    </strong> 
+  </header> 
+  <hr> 
+  <h2>Objective:</h2> 
+  <p1>I am a motivated and detail-oriented undergraduate seeking an internship  opportunity to gain practical experience. I am eager to bring my skills and dedication to  support and learn from the company.</p1> 
+  <h2>Education</h2> 
+  <p2>Pursuing B.Tech. Computer Science Engineering (CSE) in Shiv Nadar University,  
+Chennai. Expecting graduation in May 2025.</p2> 
+  <h2>Technical Skills</h2> 
+  <p2>Programming Languages: C, Java and Python, UI/UX    </p2> 
+  <h2>Course Work</h2> 
+  <p2> 
+    IV Semester 
+    Computer Networks, Design and Analysis of Algorithms, Operating Systems, Agile Scrum Process 
+    Foundations of Data Science, Introduction to Sensor Technology     III Semester 
+    Data Structures, Database Management Systems, Object-Oriented Programming 
+    Software Engineering and Design, Discrete Mathematics and Graph Theory 
+    II Semester     Python, Introduction to the Internet of Things 
+    I Semester 
+    C Programming 
+  </p2> 
+  <h2>Field of Interest</h2> 
+  <p2> 
+    UI/UX, 3D Modeling, AR, VR, and Mixed Reality Development 
+  </p2> 
+  <h2>Soft Skills</h2> 
+  <p2> 
+    Enthusiastic and dedicated undergraduate with a passion for learning.  
+    Proficient in Python, eager to apply academic knowledge to real-world challenges.      Proactive team player, committed to continuous learning and contributing positively to a      collaborative work environment. 
+  </p2> 
+  <h2>Academic Profile</h2> 
+  <table style="width:50%"> 
+    <tr> 
+      <th>Class</th> 
+      <th>Year of completion</th> 
+      <th>Percentage</th> 
+    </tr> 
+    <tr> 
+      <td>tenth</td> 
+      <td>2019</td> 
+      <td>CGPA 9.8/10</td> 
+    </tr> 
+    <tr> 
+      <td>Intermediate</td> 
+      <td>2021</td> 
+      <td>93.9%</td> 
+    </tr> 
+  </table> 
+</body> 
+</html> 
